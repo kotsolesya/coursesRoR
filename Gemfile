@@ -4,4 +4,3 @@ ruby '2.4.0'
 
 gem 'rspec'
 gem 'rubocop'
-gem 'colorize'
