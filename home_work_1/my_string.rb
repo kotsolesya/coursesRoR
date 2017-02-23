@@ -1,3 +1,4 @@
+# own method
 class String
   def valid?
     stack = []
@@ -13,7 +14,7 @@ class String
   end
 
   def valid_string?
-    strim = self.gsub(/[^\[\]\(\)\{\}\<>]/,'')
+    strim = gsub(/[^\[\]\(\)\{\}\<>]/, '')
     return true if strim.empty?
     return false if strim.size.odd?
     loop do
@@ -22,28 +23,5 @@ class String
       return false if s == strim
       strim = s
     end
-  end
-
-  def valid_from_google?
-    stack = []
-    each_char do |char|
-      case char
-      when '{', '[', '(', '<'
-        stack.push(char)
-      when '}'
-        x = stack.pop
-        return false if x != '{'
-      when ']'
-        x = stack.pop
-        return false if x != '['
-      when ')'
-        x = stack.pop
-        return false if x != '('
-      when '>'
-        x = stack.pop
-        return false if x != '<'
-      end
-    end
-    stack.empty?
   end
 end
