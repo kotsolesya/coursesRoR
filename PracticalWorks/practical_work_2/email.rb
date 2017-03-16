@@ -5,9 +5,9 @@ class Email
 
   def check(email)
     if email =~ /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
-      send_message('email', email) { |y| puts "#{y} and in Email class block" }
+      send_message(email)
     else
-      log_errors('email', "#{email} not valid email!")
+      add_to_log("#{email} not valid email!")
     end
   end
 end

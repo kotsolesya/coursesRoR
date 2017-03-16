@@ -1,0 +1,12 @@
+# Email account configuration
+to: recepient
+subject: Awesome Ruby
+body: Have A Nice Day!
+via: smtp
+via_options:
+    address: smtp.gmail.com
+    port: 587
+    nable_starttls_auto: true
+    username: kots.olesya@gmail.com
+    password: ****
+    domain: localhost.localdomain
