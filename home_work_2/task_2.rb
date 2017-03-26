@@ -6,23 +6,21 @@ class Task2
 
   def prime
     primes = []
-    (1..@number).each do |num|
+    (2..@number).each do |num|
       primes << num unless (2..num - 1).any? { |denom| num % denom <= 0 }
     end
     primes
   end
 
-  def out(arr)
-    matrix = []
-    arr.size.times { matrix << arr }
-    matrix.map! do |r|
-      puts r.inspect
-      tmp = r.shift
-      r.push(tmp)
+  def out
+    tmp = prime
+    matrix = [prime]
+    (tmp.size - 1).times do
+      matrix << tmp.push(tmp.shift).clone
     end
-    # p matrix
+    matrix.map { |el| p el }
   end
 end
 
 obj = Task2.new(7)
-obj.out(obj.prime)
+obj.out
