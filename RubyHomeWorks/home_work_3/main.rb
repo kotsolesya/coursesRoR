@@ -3,7 +3,7 @@ require_relative 'link'
 require_relative 'header'
 # Code should parse provided HTML document and puts info into console
 
-URL = 'http://www.nokogiri.org/tutorials/installing_nokogiri.html'
+URL = 'http://www.nokogiri.org/tutorials/installing_nokogiri.html'.freeze
 puts '----------Document---------'
 Document.new(URL).parse('p')
 puts '----------Link-------------'
